@@ -5,7 +5,7 @@
  * Addition of new new events;
  * Deletion of existing events using UITableView's tableView:commitEditingStyle:forRowAtIndexPath: method.
  
-  Version: 1.0
+  Version: 1.1
  
  Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple
  Inc. ("Apple") in consideration of your agreement to the following
@@ -45,7 +45,7 @@
  STRICT LIABILITY OR OTHERWISE, EVEN IF APPLE HAS BEEN ADVISED OF THE
  POSSIBILITY OF SUCH DAMAGE.
  
- Copyright (C) 2009 Apple Inc. All Rights Reserved.
+ Copyright (C) 2010 Apple Inc. All Rights Reserved.
  
  */
 
@@ -193,7 +193,7 @@
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
 		
 		// Commit the change.
-		NSError *error;
+		NSError *error = nil;
 		if (![managedObjectContext save:&error]) {
 			// Handle the error.
 		}
@@ -230,7 +230,7 @@
 	[event setCreationDate:[NSDate date]];
 	
 	// Commit the change.
-	NSError *error;
+	NSError *error = nil;
 	if (![managedObjectContext save:&error]) {
 		// Handle the error.
 	}

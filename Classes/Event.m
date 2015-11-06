@@ -3,7 +3,7 @@
      File: Event.m
  Abstract: A Core Data managed object class to represent an event containing geographical coordinates, a time stamp, and a thumbnail image. An event has a to-one relationship to Photograph. The thumbnail image is stored as a transformable attribute using UIImageToDataTransformer. 
  
-  Version: 1.0
+  Version: 1.1
  
  Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple
  Inc. ("Apple") in consideration of your agreement to the following
@@ -43,7 +43,7 @@
  STRICT LIABILITY OR OTHERWISE, EVEN IF APPLE HAS BEEN ADVISED OF THE
  POSSIBILITY OF SUCH DAMAGE.
  
- Copyright (C) 2009 Apple Inc. All Rights Reserved.
+ Copyright (C) 2010 Apple Inc. All Rights Reserved.
  
  */
 

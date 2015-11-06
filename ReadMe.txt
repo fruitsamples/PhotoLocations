@@ -18,12 +18,12 @@ Although the application's data model is different from the original application
 ===========================================================================
 BUILD REQUIREMENTS:
 
-Xcode 3.2 or later, Mac OS X v10.5.7 or later, iPhone OS v3.0.
+Mac OS X v10.6.3 or later; Xcode 3.2.3 or later; iOS 4.0 or later.
 
 ===========================================================================
 RUNTIME REQUIREMENTS:
 
-Mac OS X v10.5.7 or later, iPhone OS v3.0.
+Mac OS X v10.6.3 or later; iOS 4.0 or later.
 
 ===========================================================================
 PACKAGING LIST:
@@ -79,6 +79,10 @@ Loaded automatically by the application. Creates the application's delegate and 
 
 ===========================================================================
 CHANGES FROM PREVIOUS VERSIONS:
+
+Version 1.1
+- Added UIGraphicsEndImageContext to EventDetailViewController.m.
+  Updated for iOS v4.0.
 
 Version 1.0
 - First version.

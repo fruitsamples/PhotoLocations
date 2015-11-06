@@ -2,7 +2,7 @@
 /*
      File: LocationsAppDelegate.m
  Abstract: Application delegate to set up the Core Data stack and configure the view and navigation controllers.
-  Version: 1.0
+  Version: 1.1
  
  Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple
  Inc. ("Apple") in consideration of your agreement to the following
@@ -42,7 +42,7 @@
  STRICT LIABILITY OR OTHERWISE, EVEN IF APPLE HAS BEEN ADVISED OF THE
  POSSIBILITY OF SUCH DAMAGE.
  
- Copyright (C) 2009 Apple Inc. All Rights Reserved.
+ Copyright (C) 2010 Apple Inc. All Rights Reserved.
  
  */
 
@@ -59,7 +59,7 @@
 #pragma mark -
 #pragma mark Application lifecycle
 
-- (void)applicationDidFinishLaunching:(UIApplication *)application {
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	
 	// Configure and show the window.
 	
@@ -79,36 +79,36 @@
 	
 	[rootViewController release];
 	[aNavigationController release];
+    
+    return YES;
 }
 
-/**
- applicationWillTerminate: saves changes in the application's managed object context before the application terminates.
- */
+
+- (void)applicationDidEnterBackground:(UIApplication *)application {
+    [self saveContext];
+}
+
+
 - (void)applicationWillTerminate:(UIApplication *)application {
-	
-    NSError *error;
+    [self saveContext];
+}
+
+
+- (void)saveContext {
+    
+    NSError *error = nil;
     if (managedObjectContext != nil) {
         if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
-			// Handle the error.
+            /*
+             Replace this implementation with code to handle the error appropriately.
+             
+             abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
+             */
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
         } 
     }
-}
-
-
-#pragma mark -
-#pragma mark Saving
-
-/**
- Performs the save action for the application, which is to send the save:
- message to the application's managed object context.
- */
-- (IBAction)saveAction:(id)sender {
-	
-    NSError *error;
-    if (![[self managedObjectContext] save:&error]) {
-		// Handle error
-    }
-}
+}    
 
 
 #pragma mark -
@@ -159,7 +159,7 @@
 	
     NSURL *storeUrl = [NSURL fileURLWithPath: [[self applicationDocumentsDirectory] stringByAppendingPathComponent: @"Locations.sqlite"]];
 	
-	NSError *error;
+	NSError *error = nil;
     persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel: [self managedObjectModel]];
 
 	// Allow inferred migration from the original version of the application.

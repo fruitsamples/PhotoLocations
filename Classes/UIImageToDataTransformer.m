@@ -4,7 +4,7 @@
  Abstract: A value transformer, which transforms a UIImage object into an NSData object.
 Both Event and Photograph contain image data stored as a transformable attribute.
  
-  Version: 1.0
+  Version: 1.1
  
  Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple
  Inc. ("Apple") in consideration of your agreement to the following
@@ -44,7 +44,7 @@ Both Event and Photograph contain image data stored as a transformable attribute
  STRICT LIABILITY OR OTHERWISE, EVEN IF APPLE HAS BEEN ADVISED OF THE
  POSSIBILITY OF SUCH DAMAGE.
  
- Copyright (C) 2009 Apple Inc. All Rights Reserved.
+ Copyright (C) 2010 Apple Inc. All Rights Reserved.
  
  */
 

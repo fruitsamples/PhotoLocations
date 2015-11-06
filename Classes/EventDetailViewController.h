@@ -3,7 +3,7 @@
      File: EventDetailViewController.h
  Abstract: The table view controller responsible for displaying the time, coordinates, and photo of an event, and allowing the user to select a photo for the event, or delete the existing photo.
  
-  Version: 1.0
+  Version: 1.1
  
  Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple
  Inc. ("Apple") in consideration of your agreement to the following
@@ -43,7 +43,7 @@
  STRICT LIABILITY OR OTHERWISE, EVEN IF APPLE HAS BEEN ADVISED OF THE
  POSSIBILITY OF SUCH DAMAGE.
  
- Copyright (C) 2009 Apple Inc. All Rights Reserved.
+ Copyright (C) 2010 Apple Inc. All Rights Reserved.
  
  */
 
@@ -53,7 +53,7 @@
 	Event *event;
 	UILabel *timeLabel;
 	UILabel *coordinatesLabel;
-	UIButton *photoButton;
+	UIButton *deletePhotoButton;
 	UIImageView *photoImageView;
 }
 
@@ -61,10 +61,11 @@
 
 @property (nonatomic, retain) IBOutlet UILabel *timeLabel;
 @property (nonatomic, retain) IBOutlet UILabel *coordinatesLabel;
-@property (nonatomic, retain) IBOutlet UIButton *photoButton;
+@property (nonatomic, retain) IBOutlet UIButton *deletePhotoButton;
 @property (nonatomic, retain) IBOutlet UIImageView *photoImageView;
 
-- (IBAction)editPhoto;
+- (IBAction)choosePhoto;
+- (IBAction)deletePhoto;
 - (void)updatePhotoInfo;
 
 @end
